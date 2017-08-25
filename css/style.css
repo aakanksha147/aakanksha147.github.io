@@ -1,0 +1,85 @@
+table > tbody{
+    height:400px;
+    overflow-x:scroll;
+}
+.tick line {
+  display: none;
+}
+
+.dash_menu{
+    box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.1);
+    text-align: center;
+    background: #fafafa;
+    overflow: auto;
+}
+.dash_menu h1{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: 200;
+    color: #030303;
+    font-family: sans-serif;
+}
+.dash_yearlist{
+    margin-top:10px;
+}
+.dash_yearlist button{
+    color: #fff;
+    background-color: #00AEEF;
+    border-radius:5px;
+    border: none;
+    font-size: 18px;
+    padding: 6px 18px;
+    font-weight: 200;
+    transition:all 0.3s ease-in-out;
+    outline:none;
+}
+.dash_yearlist button:hover{
+    background-color:#3452A4;
+}
+.dash_yearlist button:focus{
+    background-color:#3452A4;
+}
+.dash_yearlist h1{
+    display: inline;
+    margin-right: 5px;
+    font-size: 18px;
+    color: #3452A4;
+}
+.matchstatshead{
+    margin-top: 30px;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1);
+    overflow:auto;
+}
+.matchstatshead h1{
+    text-align: center;
+    font-size: 22px;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    font-weight: 200;
+}
+.matchstatshead h2{
+    margin-top:60px;
+    text-align:center;
+    color:#00AEEF;
+}
+.matchstatshead h3{
+    font-size:20px;
+    text-align:center;
+}
+g.nv-pieLabels{
+    transform:translate(321,200) !important;
+}
+#top10batsman svg{
+    padding-left:20px;
+}
+#tosswinner svg{
+    width: 95% !important;
+    overflow: visible;
+    padding-left: 100px;
+}
+.statstable{
+    margin-top:20px;
+    margin-bottom:40px;
+    text-align:center;
+}

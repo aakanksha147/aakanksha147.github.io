@@ -1,0 +1,113 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+<head>
+  <title>AngularJS Task</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/nv.d3.min.css">   
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/d3.min.js" charset="utf-8"></script>
+    <script src="js/d3-tip.min.js"></script>
+    <script src="js/nv.d3.min.js"></script>
+    <script src="js/angular-nvd3.js"></script>
+
+    <script src="js/mainController.js"></script>
+</head>
+
+    <body ng-controller="MainCtrl as main">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-if="main.load" style="padding:0px;">
+            <div class="dash_menu">
+                
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <h1>IPL Score Sheet</h1>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                    <div class="dash_yearlist">
+                        <h1>See Stats For :</h1>
+                        <button ng-click="main.getData('2008')">2008</button>
+                        <button ng-click="main.getData('2009')">2009</button>
+                        <button ng-click="main.getData('2010')">2010</button>
+                        <button ng-click="main.getData('2011')">2011</button>
+                        <button ng-click="main.getData('2012')">2012</button>
+                        <button ng-click="main.getData('2013')">2013</button>
+                        <button ng-click="main.getData('2014')">2014</button>
+                        <button ng-click="main.getData('2015')">2015</button>
+                        <button ng-click="main.getData('2016')">2016</button>
+                    </div>
+                </div>
+                
+            </div>
+        
+
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="matchstatshead">
+                <h1>Season wise Matches</h1>
+                <nvd3 options="main.options5" data="main.data5"></nvd3>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="matchstatshead">
+                <h1>Top 10 Batsman</h1>
+                <nvd3 options="main.options2" data="main.data2" id="top10batsman"></nvd3>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="matchstatshead">
+                <h1>Matches Won by Toss Decision</h1>
+                <nvd3 options="main.options4" data="main.data4" id="tosswinner"></nvd3>
+            </div>
+        </div>
+          
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="matchstatshead">
+                <h1>Winning %</h1>
+                <nvd3 id="bar" class="matchstats" options="main.options1" data="main.data1"></nvd3>
+            </div>
+            
+        </div>
+
+        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+            <div class="matchstatshead">
+                <h1>Top 10 Extra Runs by Bowlers</h1>
+                <nvd3 options="main.options3" data="main.data3"></nvd3>
+            </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+            <div class="matchstatshead">
+                <h2>{{main.total_Matches}}</h2> <h3>Matches Played</h3>      
+                <h2>{{main.totalScore}}</h2><h3 style="margin-bottom:85px;">Runs Scored</h3>
+            </div>
+        </div>
+       
+         
+            <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 statstable">
+                <table class="table table-striped" style="height: 200px; display: inline-block; overflow: auto; width:max-content; margin:auto;">
+                    <thead>
+                      <tr>
+                        <th style="text-align:center;">Team I</th>
+                        <th style="text-align:center;">Team II</th>
+                        <th style="text-align:center;">Winner</th>
+                        <th style="text-align:center;">Player of the match</th>
+                        <th style="text-align:center;">Win by runs</th>
+                        <th style="text-align:center;">Win by wickets</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="x in main.match_data">
+                        <td ng-repeat="y in x track by $index" style="text-align:center;">{{y}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+
+
+</body>
+</html>
