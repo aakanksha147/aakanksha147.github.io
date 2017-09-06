@@ -213,7 +213,7 @@ app.controller('MainCtrl', function($http,$rootScope,$scope) {
 
                 vm.data2 = [];
                 var value = []
-                for(i=result.length-1;i>result.length-12;i--){
+                for(i=result.length-1;i>result.length-11;i--){
                     if(result[i][0]==undefined || result[i][1]==undefined){
                     }
                     else{
@@ -339,7 +339,7 @@ app.controller('MainCtrl', function($http,$rootScope,$scope) {
                     }
                 };
                 var value1 = []
-                for(i=result1.length-1;i>result1.length-12;i--){
+                for(i=result1.length-1;i>result1.length-11;i--){
                     if(result1[i][0]==undefined || result1[i][1]==undefined){
                         console.log("skip")
                     }
