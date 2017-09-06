@@ -1,7 +1,7 @@
 <!DOCTYPE>
 <html ng-app="myApp">
 <head>
-  <title>IPL Dashboard</title>
+  <title>IPL</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/nv.d3.min.css">   
     <link rel="stylesheet" href="css/style.css">
@@ -15,9 +15,12 @@
     <script src="js/angular-nvd3.js"></script>
 
     <script src="js/mainController.js"></script>
+
 </head>
 
     <body ng-controller="MainCtrl as main">
+    
+        <div ng-if="main.loader" class="loader"></div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-if="main.load" style="padding:0px;">
             <div class="dash_menu">
                 
@@ -88,7 +91,7 @@
        
          
             <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 statstable">
-                <table class="table table-striped" style="height: 200px; display: inline-block; overflow: auto; width:max-content; margin:auto;">
+                <table class="table table-striped" style= "height: 200px; border: 16px solid #f3f3f3; display: inline-block; overflow: auto; width:max-content; margin:auto;">
                     <thead>
                       <tr>
                         <th style="text-align:center;">Team I</th>

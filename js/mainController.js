@@ -2,7 +2,8 @@ var app = angular.module('myApp', ['nvd3']);
 
 app.controller('MainCtrl', function($http,$rootScope,$scope) {
     var vm=this;
-    vm.load = false
+    vm.load = false;
+    vm.loader=true;
     console.log(vm.load)
     vm.dashboard = dashboard;
     vm.getData = getData;
@@ -93,6 +94,7 @@ app.controller('MainCtrl', function($http,$rootScope,$scope) {
                         i++;
                     }
                 }
+                vm.loader=false;
                 vm.load = true
                 var toss_arr = {};
                 for (var i = 0, j = toss_win.length; i < j; i++) {
